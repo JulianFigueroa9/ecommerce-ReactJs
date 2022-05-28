@@ -1,0 +1,15 @@
+.logoNav{
+    width:100px;
+    height:100px;
+}
+
+nav{
+    background-color: #C5DED4;
+}
+
+.menuLinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}

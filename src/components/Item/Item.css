@@ -1,0 +1,14 @@
+.prodNombre{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.imgProd{
+    width: 250px;
+    height: 250px;
+}
+
+.prodPrecio{
+    font-size: 1.25rem;
+    font-weight: 600;
+}

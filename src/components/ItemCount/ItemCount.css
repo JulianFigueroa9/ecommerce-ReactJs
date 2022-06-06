@@ -1,0 +1,18 @@
+.contador{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.btnAgregar{
+    margin-top: 5%;
+    width: 65%;
+}
+
+.btnRestar, .btnSumar{
+    width: 22%;
+    font-size: 1rem;
+    border-radius: 20%;
+}

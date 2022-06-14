@@ -3,6 +3,7 @@ import './NavBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../../assets/logo.png'
 import CartWidget from '../CartWidget/CartWidget.jsx'
+import { NavLink } from 'react-router-dom';
 
 function NavBar (){
     return (
@@ -17,21 +18,10 @@ function NavBar (){
                     </button>
                     <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav menuLinks">
-                        <li className="nav-item text" >
-                        <a className="nav-link active" aria-current="page" href="../../../public/index.html">INICIO</a>
-                        </li>
-                        <li className="nav-item">
-                        <a className="nav-link" href="">TORTAS PERSONALIZADAS</a>
-                        </li>
-                        <li className="nav-item">
-                        <a className="nav-link" href="">ESPECIALIDADES</a>
-                        </li>
-                        <li className="nav-item">
-                        <a className="nav-link" href="">BOXES</a>
-                        </li>
-                        <li className="nav-item">
-                        <a className="nav-link" href="">CONTACTO</a>
-                        </li>
+                        <NavLink  className="linkPages" to="/">INICIO</NavLink>
+                        <NavLink  className="linkPages" to="/categoria/TortasPersonalizadas">TORTAS PERSONALIZADAS</NavLink>
+                        <NavLink  className="linkPages" to="/categoria/Especialidades">ESPECIALIDADES</NavLink>
+                        <NavLink  className="linkPages" to="/categoria/Boxes">BOXES</NavLink>
                         <CartWidget />
                     </ul>
                     </div>

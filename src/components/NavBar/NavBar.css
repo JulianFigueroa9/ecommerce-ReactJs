@@ -13,3 +13,9 @@ nav{
     justify-content: flex-end;
     width: 100%;
 }
+
+.linkPages{
+    text-decoration: none;
+    margin-left: 1%;
+    color:black
+}

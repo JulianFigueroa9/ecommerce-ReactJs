@@ -17,6 +17,10 @@ function ItemCount({ stock, initial, onAdd }) {
         }
     }
 
+    const agregar = () => {
+        onAdd(count)
+    }
+
 	return (
 		<div className="card-container contador">
             <div>
@@ -24,11 +28,7 @@ function ItemCount({ stock, initial, onAdd }) {
                     <label className="fs-3 mx-4 text-success">{count}</label>
                 <button onClick={sumar} className="btnSumar btn-sm" disabled={count > stock - 1}>+</button>
             </div>
-            <button onClick={() => console.log(`Se añadieron ${count} unidades al carrito`)}
-                className="btn-success btnAgregar"
-                disabled={stock === 0}>
-                Agregar al carrito
-            </button>
+            <button className="btn btn-outline-primary" onClick={agregar}>Agregar al carrito</button>
 		</div>
 	)
 }

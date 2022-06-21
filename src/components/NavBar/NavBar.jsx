@@ -22,7 +22,7 @@ function NavBar (){
                         <NavLink  className="linkPages" to="/categoria/TortasPersonalizadas">TORTAS PERSONALIZADAS</NavLink>
                         <NavLink  className="linkPages" to="/categoria/Especialidades">ESPECIALIDADES</NavLink>
                         <NavLink  className="linkPages" to="/categoria/Boxes">BOXES</NavLink>
-                        <CartWidget />
+                        <NavLink to="/cart">{<CartWidget />}</NavLink>
                     </ul>
                     </div>
                 </div>

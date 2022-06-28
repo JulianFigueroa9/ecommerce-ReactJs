@@ -4,8 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../../assets/logo.png'
 import CartWidget from '../CartWidget/CartWidget.jsx'
 import { NavLink } from 'react-router-dom';
+import { useCartContext } from '../CartContext/CartContext';
 
 function NavBar (){
+    const {cantidadItem} = useCartContext()
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -22,7 +24,14 @@ function NavBar (){
                         <NavLink  className="linkPages" to="/categoria/TortasPersonalizadas">TORTAS PERSONALIZADAS</NavLink>
                         <NavLink  className="linkPages" to="/categoria/Especialidades">ESPECIALIDADES</NavLink>
                         <NavLink  className="linkPages" to="/categoria/Boxes">BOXES</NavLink>
-                        <NavLink to="/cart">{<CartWidget />}</NavLink>
+                        <NavLink to="/cart">
+                            <div className="cartWidget">
+                                {<CartWidget />}
+                                <div className="cartCount">{ cantidadItem() !== 0 && cantidadItem()}</div>
+                            </div>
+                        </NavLink>
+                        
+                        
                     </ul>
                     </div>
                 </div>

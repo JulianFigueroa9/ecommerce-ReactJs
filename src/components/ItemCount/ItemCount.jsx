@@ -8,13 +8,12 @@ function ItemCount({ stock, initial, onAdd }) {
 	let [count, setCount] = useState(initial)
 
     const sumar = () => {
-        (count < stock) ? setCount(count++) : console.log('Superaste el stock del producto');
+        (count < stock) ? setCount(count+1) : console.log('Superaste el stock del producto');
     }
 
     const restar = () => {
-        if (count > initial){
-            setCount(count--)
-        }
+        if (count > initial) setCount(count - 1)
+    
     }
 
     const agregar = () => {

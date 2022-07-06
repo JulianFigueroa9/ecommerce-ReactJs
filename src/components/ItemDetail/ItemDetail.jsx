@@ -29,7 +29,7 @@ function ItemDetail ({item}){
                     <h4>Precio: ${item.precio}</h4>
                     {boolean 
                     ?
-                    <ItemCount initial="1" stock="5" onAdd={onAdd}/>
+                    <ItemCount initial="1" stock="10" onAdd={onAdd}/>
                     : <InputCount />
                     }
                 </div>

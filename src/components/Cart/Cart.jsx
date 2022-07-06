@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useCartContext } from "../CartContext/CartContext";
 import EmptyCart from "../EmptyCart/EmptyCart";
 
@@ -23,12 +24,16 @@ const Cart = () => {
                                         Cantidad: {item.cantidad} -
                                         Subtotal: ${item.precio * item.cantidad}
                                 <button className="btn-delete" key={item.id} onClick={()=> eliminarItem(item.id) }>X</button>
+                               
                             </li>  )
                         }
                     </ul>
                     <div>
                     <h4 className="text-2xl font-bold py-8">Total: ${sumaPrecioItems()}</h4>
-                        <button onClick={emptyCart} >Vaciar Carrito</button>
+                        <button className="btn-primary" onClick={emptyCart} >Vaciar Carrito</button>
+                        <Link to='/checkout'>
+                            <button className="btn-primary">Check-Out</button>
+                        </Link>
                     </div>
                 </div>
             }

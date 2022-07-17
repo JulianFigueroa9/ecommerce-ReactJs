@@ -15,19 +15,19 @@ const Checkout = () => {
     const [phone, setPhone] = useState('')
     const [emailValid, setEmailValid] = useState('')
     const [showModal, setShowModal] = useState(false)
-    const {cart, sumaPrecioItems, emptyCart} = useCartContext()
+    const {cart, totalItems, emptyCart} = useCartContext()
 
 
-        function generarOrden(e) {
+        function generateOrder(e) {
         e.preventDefault()
 
         const purchaseOrder = {}
         purchaseOrder.buyer = { name, email, phone }
-        purchaseOrder.total = sumaPrecioItems()
+        purchaseOrder.total = totalItems()
         purchaseOrder.items = cart.map(cartItem => {
             const id = cartItem.id
-            const title = cartItem.title
-            const price = cartItem.price * cartItem.cantidad
+            const title = cartItem.nombre
+            const price = cartItem.precio * cartItem.cantidad
         
             return {id, title, price}
         })
@@ -55,7 +55,7 @@ const Checkout = () => {
             <h2 className="title">Completa tus datos</h2>
             <p className="pb-4">Para poder confirmar la compra, ingresa tus datos:</p>
             <Form
-                generarOrden={generarOrden}
+                generateOrder={generateOrder}
                 name={name}
                 setName={setName}
                 phone={phone}
@@ -71,7 +71,7 @@ const Checkout = () => {
                 orderID={orderID}
                 showModal={showModal}
                 setShowModal={setShowModal}
-                generarOrden={generarOrden}/>
+                generateOrder={generateOrder}/>
         </div>
     )
 }

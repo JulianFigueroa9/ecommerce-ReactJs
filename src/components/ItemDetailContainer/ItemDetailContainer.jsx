@@ -6,7 +6,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 function ItemDetailContainer(){
 
-    const [productos, setProductos] = useState()
+    const [products, setProducts] = useState()
     const [loading, setLoading] = useState(true)
     const {id} = useParams()
     
@@ -15,7 +15,7 @@ function ItemDetailContainer(){
         const queryProduct = doc(db, 'productos', id)
         getDoc(queryProduct)
         .then((resp) => {
-            setProductos({id: resp.id, ...resp.data(),});
+            setProducts({id: resp.id, ...resp.data(),});
           })
           .catch((err) => alert(err))
           .finally(() => setLoading(false));
@@ -27,7 +27,7 @@ function ItemDetailContainer(){
                 :
                 <>
                     <div className="card">
-                        <ItemDetail item={productos} />
+                        <ItemDetail item={products} />
                     </div>
                 </>}
             </div>

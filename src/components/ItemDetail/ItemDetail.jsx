@@ -6,13 +6,13 @@ import ItemCount from '../ItemCount/ItemCount.jsx';
 
 function ItemDetail ({item}){
 
-    const {cart, agregarCarrito} = useCartContext()
+    const {cart, addToCart} = useCartContext()
 
     const [boolean, setBoolean] = useState(true)
 
     const onAdd = (cant) =>{
         setBoolean(false)
-        agregarCarrito({...item, cantidad:cant})
+        addToCart({...item, cantidad:cant})
 
     }
     console.log(cart)

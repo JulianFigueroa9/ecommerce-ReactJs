@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const Form = ({generarOrden, name, setName, email, setEmail, emailValid, setEmailValid, phone, setPhone, notValid, setShowModal}) => {
+const Form = ({generateOrder, name, setName, email, setEmail, emailValid, setEmailValid, phone, setPhone, notValid, setShowModal}) => {
     return (
         <div>
             <form 
-            onSubmit={generarOrden}
+            onSubmit={generateOrder}
             className="form-container">
                 <div className="items-start">
                     <div className="form-field">
@@ -55,7 +55,8 @@ const Form = ({generarOrden, name, setName, email, setEmail, emailValid, setEmai
                         type="submit"
                         disabled={notValid}
                         onClick={() => setShowModal(true)}
-                        className="btn-primary ml-2 disabled:opacity-25 ">Confirmar compra</button>
+                        className="btn-primary ml-2 disabled:opacity-25 ">Confirmar compra
+                    </button>
                 </div>
             </form>
         </div>

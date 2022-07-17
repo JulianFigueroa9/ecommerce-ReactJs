@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import { useCartContext } from '../CartContext/CartContext';
 
 function NavBar (){
-    const {cantidadItem} = useCartContext()
+    const {itemQty} = useCartContext()
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -27,7 +27,7 @@ function NavBar (){
                         <NavLink to="/cart">
                             <div className="cartWidget">
                                 {<CartWidget />}
-                                <div className="cartCount">{ cantidadItem() !== 0 && cantidadItem()}</div>
+                                <div className="cartCount">{ itemQty() !== 0 && itemQty()}</div>
                             </div>
                         </NavLink>
                         

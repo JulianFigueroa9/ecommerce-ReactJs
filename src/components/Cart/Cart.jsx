@@ -4,7 +4,7 @@ import { useCartContext } from "../CartContext/CartContext";
 import EmptyCart from "../EmptyCart/EmptyCart";
 
 const Cart = () => {
-    const { cart, emptyCart, eliminarItem, sumaPrecioItems } = useCartContext()
+    const { cart, emptyCart, deleteItem, totalItems } = useCartContext()
     return (
         <div>
             {!cart.length > 0 ?
@@ -23,13 +23,13 @@ const Cart = () => {
                                         Precio: ${item.precio} -
                                         Cantidad: {item.cantidad} -
                                         Subtotal: ${item.precio * item.cantidad}
-                                <button className="btn-delete" key={item.id} onClick={()=> eliminarItem(item.id) }>X</button>
+                                <button className="btn-delete" key={item.id} onClick={()=> deleteItem(item.id) }>X</button>
                                
                             </li>  )
                         }
                     </ul>
                     <div>
-                    <h4 className="text-2xl font-bold py-8">Total: ${sumaPrecioItems()}</h4>
+                    <h4 className="text-2xl font-bold py-8">Total: ${totalItems()}</h4>
                         <button className="btn-primary" onClick={emptyCart} >Vaciar Carrito</button>
                         <Link to='/checkout'>
                             <button className="btn-primary">Check-Out</button>

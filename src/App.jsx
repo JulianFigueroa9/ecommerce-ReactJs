@@ -9,6 +9,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { CartContextProvider } from './components/CartContext/CartContext';
 import Cart from './components/Cart/Cart.jsx';
 import Checkout from './components/Checkout/Checkout';
+import Modal from './components/Checkout/Modal';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="/cart" element={ <Cart />} />
           <Route path='/checkout' element={ <Checkout /> } />
+          <Route path="/checkoutID" element={ <Modal />} />
         </Routes>
       </BrowserRouter>
     </CartContextProvider>

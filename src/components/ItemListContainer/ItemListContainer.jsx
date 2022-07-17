@@ -9,9 +9,9 @@ import ItemList from '../ItemList/ItemList.jsx';
 
 function ItemListContainer ({greeting}) {
 
-    const [productos, setProductos] = useState([])
+    const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-    const {categoriaId} = useParams()
+    const {idCategory} = useParams()
 
     
     useEffect(()=>{
@@ -19,20 +19,20 @@ function ItemListContainer ({greeting}) {
         const queryCollection = collection(db, 'productos')
        
 
-        if (categoriaId){
-            const queryCollectionFilter = query( queryCollection, where( 'categoria', '==', categoriaId ) )
+        if (idCategory){
+            const queryCollectionFilter = query( queryCollection, where( 'categoria', '==', idCategory ) )
             getDocs(queryCollectionFilter)
-            .then( data => setProductos( data.docs.map( item => ( { id: item.id, ...item.data() } )  ) ) )
+            .then( data => setProducts( data.docs.map( item => ( { id: item.id, ...item.data() } )  ) ) )
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
             
         } else{
             getDocs(queryCollection)
-             .then( data => setProductos( data.docs.map( item => ( { id: item.id, ...item.data() } )  ) ) )
+             .then( data => setProducts( data.docs.map( item => ( { id: item.id, ...item.data() } )  ) ) )
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
         }
-    },[categoriaId])
+    },[idCategory])
 
     return (
         <> 
@@ -42,7 +42,7 @@ function ItemListContainer ({greeting}) {
                 :
                 <>
                     <h2>{greeting}</h2>
-                    <ItemList items={productos} />
+                    <ItemList items={products} />
                 </>}
             </div>
         </>
